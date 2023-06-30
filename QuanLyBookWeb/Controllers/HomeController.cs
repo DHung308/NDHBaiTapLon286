@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuanLyBookWeb.Areas.Identity.Data;
 using QuanLyBookWeb.Models;
 using System.Diagnostics;
 

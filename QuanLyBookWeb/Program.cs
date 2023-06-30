@@ -7,11 +7,15 @@ var connectionString = builder.Configuration.GetConnectionString("QuanLyDbContex
 
 builder.Services.AddDbContext<QuanLyDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<QuanLyBookWebUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<QuanLyDbContext>();
+builder.Services.AddDefaultIdentity<QuanLyBookWebUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<QuanLyDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireUppercase = false;
+});
 
 var app = builder.Build();
 
