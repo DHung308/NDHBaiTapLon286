@@ -1,0 +1,29 @@
+﻿@model DHBooks.Models.Role
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Sửa</h1>
+
+<h4>Loại tài khoản</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RoleId" />
+            <div class="form-group">
+                <label asp-for="RoleName" class="control-label">Tên</label>
+                <input asp-for="RoleName" class="form-control" />
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="submit" value="Lưu" class="btn btn-success" />
+                <a class="btn btn-primary btn-tone m-r-5" asp-action="Index">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+

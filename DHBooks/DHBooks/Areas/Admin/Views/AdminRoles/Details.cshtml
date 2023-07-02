@@ -1,0 +1,25 @@
+﻿@model DHBooks.Models.Role
+
+@{
+    ViewData["Title"] = "HEHE";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="product-info-table m-t-20">
+    <tbody>
+        <tr>
+            <td>ID:</td>
+            <td class="text-dark font-weight-semibold">@Model.RoleId</td>
+        </tr>
+        <tr>
+            <td>Tên:</td>
+            <td>@Model.RoleName</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a class="btn btn-warning m-r-5" asp-action="Edit" asp-route-id="@Model.RoleId">Sửa</a> |
+                <a class="btn btn-primary btn-tone m-r-5" asp-action="Index">Quay lại</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
